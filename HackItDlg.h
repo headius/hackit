@@ -40,7 +40,6 @@ public:
 	HANDLE m_ListThreadHandle;
 	DWORD m_ListThreadID;
 	static BOOL CALLBACK EnumChildWindowsProc(HWND hwnd, LPARAM lParam);
-	static BOOL CALLBACK ConsolePollProc(HWND hwnd, LPARAM lParam);
 	//static DWORD WINAPI ListRefreshProc(void * pParam);
 	static LRESULT CALLBACK ListThreadWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 	static LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -128,6 +127,7 @@ public:
 	HTREEITEM AddBasicItem( HWND Window, BOOL addRelatedItems);
 	HTREEITEM AddTrayyedItem(HWND window);
 	HTREEITEM AddToppedItem(HWND window);
+	void HandleShellHook(WPARAM wParam, LPARAM lParam);
 	void DeleteBasicItem(HWND TempWindow, BOOL deleteRelatedItems);
 	void DeleteToppedItem(HWND window);
 	void DeleteTrayyedItem(HWND window);
