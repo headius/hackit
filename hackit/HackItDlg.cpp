@@ -293,10 +293,10 @@ LRESULT CALLBACK HackItDlg::WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPAR
 		case WM_TRAYMESSAGE1:
 			returnCode = theDlg->OnTrayNotification(wParam, lParam);
 			break;
-		case WM_TRAYMESSAGE2:
+		/*case WM_TRAYMESSAGE2:
 			returnCode = theDlg->OnCheckTrayyedList(wParam, lParam);
 			break;
-		/*case WM_CREATEDETECTED:
+		case WM_CREATEDETECTED:
 			theDlg->OnCreateDetected(wParam, lParam);
 			break;
 		case WM_DESTROYDETECTED:
@@ -389,6 +389,9 @@ LRESULT CALLBACK HackItDlg::ListThreadWindowProc(HWND hWnd, UINT uMsg, WPARAM wP
 			break;
 		case HM_DELETETOPPEDITEM:
 			theDlg->DeleteToppedItem((HWND)lParam);
+			break;
+		case WM_TRAYMESSAGE2:
+			returnCode = theDlg->OnCheckTrayyedList(wParam, lParam);
 			break;
 		default:
 			return DefWindowProc(hWnd, uMsg, wParam, lParam);

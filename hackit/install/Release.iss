@@ -5,25 +5,32 @@
 
 [Setup]
 AppName=Hack-It
-AppVerName=Hack-It v4.0 RC2
+AppVerName=Hack-It v4.0
 AppPublisher=Headius, Inc
 AppPublisherURL=http://www.headius.com
-AppSupportURL=http://www.headius.com/hackit.html
+AppSupportURL=http://www.headius.com/support.html
 AppUpdatesURL=http://www.headius.com/hackit.html
-AppVersion=4.0RC2
-AppCopyright=Copyright © 1997-2001 Headius, Inc.
+AppVersion=4.0
+AppCopyright=Copyright © 1997-2002 Headius, Inc.
 DefaultDirName={pf}\Hack-It
-DefaultGroupName=Startup
+DefaultGroupName=Hack-It
 MinVersion=4,4
 LicenseFile=C:\HackIt\Install\License.txt
 OutputDir=Release
-AlwaysRestart=Yes
+OutputBaseFilename=hackit4setup
+WizardStyle=modern
+WizardImageFile=wizard_image.bmp
+WizardSmallImageFile=wizard_image_small.bmp
+UninstallStyle=modern
 
 [Files]
-Source: "C:\HackIt\Release\HackIt.exe"; DestDir: "{app}"; Flags: restartreplace
-Source: "C:\HackIt\Release\Trayman.dll"; DestDir: "{app}"; Flags: restartreplace
-Source: "C:\HackIt\Help\HackIt.chm"; DestDir: "{app}"; Flags: restartreplace
-Source: "C:\HackIt\Install\License.txt"; DestDir: "{app}"
+Source: "C:\HackIt\Release\HackIt.exe"; DestDir: "{app}"; CopyMode: alwaysoverwrite; Flags: restartreplace
+Source: "C:\HackIt\Release\Trayman.dll"; DestDir: "{app}"; CopyMode: alwaysoverwrite; Flags: restartreplace
+Source: "C:\HackIt\Help\HackIt.chm"; DestDir: "{app}"; CopyMode: alwaysoverwrite; Flags: restartreplace
+Source: "C:\HackIt\Install\License.txt"; DestDir: "{app}"; CopyMode: alwaysoverwrite
 
 [Icons]
 Name: "{group}\Hack-It"; Filename: "{app}\HackIt.exe"; WorkingDir: "{app}"
+Name: "{group}\Hack-It Help File"; Filename: "{app}\HackIt.chm"; WorkingDir: "{app}"
+Name: "{group}\Hack-It License"; Filename: "{app}\License.txt"; WorkingDir: "{app}"
+Name: "Startup\Hack-It"; Filename: "{app}\HackIt.exe"; WorkingDir: "{app}"
