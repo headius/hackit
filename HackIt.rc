@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -28,19 +28,19 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "#include <windows.h>\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
     "#define _AFX_NO_OLE_RESOURCES\r\n"
@@ -67,27 +67,27 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON    DISCARDABLE     "res\\HackIt.ico"
-IDI_DESKTOP             ICON    DISCARDABLE     "res\\icon1.ico"
-IDI_HIDDEN              ICON    DISCARDABLE     "res\\ico00001.ico"
-IDI_DEFAULT             ICON    DISCARDABLE     "res\\ico00003.ico"
-IDI_TRAY                ICON    DISCARDABLE     "res\\ico00002.ico"
-IDI_TOPPED              ICON    DISCARDABLE     "res\\ico00004.ico"
-IDR_MAINFRAMESM         ICON    DISCARDABLE     "res\\icon2.ico"
-IDI_BUTTON              ICON    DISCARDABLE     "res\\ico00005.ico"
-IDI_STATIC              ICON    DISCARDABLE     "res\\ico00006.ico"
-IDI_EDIT                ICON    DISCARDABLE     "res\\ico00007.ico"
-IDI_COMBO               ICON    DISCARDABLE     "res\\ico00008.ico"
-IDI_SCROLL              ICON    DISCARDABLE     "res\\ico00009.ico"
-IDI_LIST                ICON    DISCARDABLE     "res\\ico00010.ico"
-IDI_TREEVIEW            ICON    DISCARDABLE     "res\\ico00011.ico"
-IDI_LISTVIEW            ICON    DISCARDABLE     "res\\ico00012.ico"
-IDI_TABCTRL             ICON    DISCARDABLE     "res\\ico00013.ico"
-IDI_TOOLTIP             ICON    DISCARDABLE     "res\\ico00014.ico"
-IDI_STATUS              ICON    DISCARDABLE     "res\\ico00015.ico"
-IDI_MDICLIENT           ICON    DISCARDABLE     "res\\ico00016.ico"
-IDI_DIALOG              ICON    DISCARDABLE     "res\\ico00017.ico"
-IDI_TOOLBAR             ICON    DISCARDABLE     "res\\ico00018.ico"
+IDR_MAINFRAME           ICON                    "res\\HackIt.ico"
+IDI_DESKTOP             ICON                    "res\\icon1.ico"
+IDI_HIDDEN              ICON                    "res\\ico00001.ico"
+IDI_DEFAULT             ICON                    "res\\ico00003.ico"
+IDI_TRAY                ICON                    "res\\ico00002.ico"
+IDI_TOPPED              ICON                    "res\\ico00004.ico"
+IDR_MAINFRAMESM         ICON                    "res\\icon2.ico"
+IDI_BUTTON              ICON                    "res\\ico00005.ico"
+IDI_STATIC              ICON                    "res\\ico00006.ico"
+IDI_EDIT                ICON                    "res\\ico00007.ico"
+IDI_COMBO               ICON                    "res\\ico00008.ico"
+IDI_SCROLL              ICON                    "res\\ico00009.ico"
+IDI_LIST                ICON                    "res\\ico00010.ico"
+IDI_TREEVIEW            ICON                    "res\\ico00011.ico"
+IDI_LISTVIEW            ICON                    "res\\ico00012.ico"
+IDI_TABCTRL             ICON                    "res\\ico00013.ico"
+IDI_TOOLTIP             ICON                    "res\\ico00014.ico"
+IDI_STATUS              ICON                    "res\\ico00015.ico"
+IDI_MDICLIENT           ICON                    "res\\ico00016.ico"
+IDI_DIALOG              ICON                    "res\\ico00017.ico"
+IDI_TOOLBAR             ICON                    "res\\ico00018.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -95,8 +95,8 @@ IDI_TOOLBAR             ICON    DISCARDABLE     "res\\ico00018.ico"
 //
 
 IDD_AUTO DIALOGEX 0, 0, 267, 178
-STYLE DS_SYSMODAL | DS_MODALFRAME | DS_3DLOOK | DS_CONTEXTHELP | WS_POPUP | 
-    WS_CAPTION | WS_SYSMENU
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CONTEXTHELP | 
+    WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_CONTEXTHELP
 CAPTION "Automatic Functions"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
@@ -114,8 +114,9 @@ BEGIN
     CTEXT           "Function Information",IDC_STATIC,124,5,138,10,SS_SUNKEN
 END
 
-IDD_AUTOENTRY DIALOG DISCARDABLE  0, 0, 272, 197
-STYLE DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_AUTOENTRY DIALOG  0, 0, 272, 197
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
 CAPTION "Add Auto Entry"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -201,8 +202,8 @@ BEGIN
                     SS_CENTERIMAGE
 END
 
-IDD_TEXTENTRY DIALOG DISCARDABLE  0, 0, 222, 60
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_TEXTENTRY DIALOG  0, 0, 222, 60
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Change Text"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -213,8 +214,8 @@ BEGIN
                     12,SS_CENTERIMAGE | SS_SUNKEN
 END
 
-IDD_ILLEGALWINDOWDLG DIALOG DISCARDABLE  0, 0, 267, 150
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_ILLEGALWINDOWDLG DIALOG  0, 0, 267, 150
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Illegal Windows"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -225,9 +226,9 @@ BEGIN
     PUSHBUTTON      "Delete",IDC_DELETEILLEGALWINDOW,210,55,52,20
 END
 
-IDD_ILLEGALWINDOWENTRY DIALOG DISCARDABLE  0, 0, 176, 190
-STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
-    WS_SYSMENU
+IDD_ILLEGALWINDOWENTRY DIALOG  0, 0, 176, 190
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
 CAPTION "Add Illegal Window Entry"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -255,16 +256,17 @@ BEGIN
     CTEXT           "Name",IDC_STATIC,7,7,162,10,SS_SUNKEN
 END
 
-IDD_SPLASH DIALOG DISCARDABLE  0, 0, 35, 15
-STYLE DS_SYSMODAL | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE
+IDD_SPLASH DIALOG  0, 0, 35, 15
+STYLE DS_SYSMODAL | DS_SETFONT | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
+    WS_VISIBLE
 FONT 36, "Times New Roman"
 BEGIN
     CONTROL         203,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,0,0,
                     35,15
 END
 
-IDD_SETTINGS_WINDOWS DIALOG DISCARDABLE  0, 0, 233, 170
-STYLE WS_POPUP | WS_CAPTION
+IDD_SETTINGS_WINDOWS DIALOG  0, 0, 233, 170
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
 CAPTION "Window Control"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -319,8 +321,8 @@ BEGIN
                     WS_VISIBLE | WS_TABSTOP,5,137,167,10
 END
 
-IDD_SETTINGS_GENERAL DIALOG DISCARDABLE  0, 0, 235, 106
-STYLE WS_POPUP | WS_CAPTION
+IDD_SETTINGS_GENERAL DIALOG  0, 0, 235, 106
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION
 CAPTION "General"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -357,29 +359,29 @@ BEGIN
 END
 
 IDD_ABOUTBOX DIALOGEX 0, 0, 195, 222
-STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
-    WS_VISIBLE
-FONT 8, "MS Sans Serif"
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | 
+    DS_CENTER | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     CONTROL         203,IDC_STATIC,"Static",SS_BITMAP,19,10,157,62
-    CTEXT           "Hack-It ©1997-2001",IDC_STATIC,10,76,175,8
-    CTEXT           "Hack-It! ©1996-2001",IDC_STATIC,10,84,175,9
+    CTEXT           "Hack-It ©1997-2003",IDC_STATIC,10,76,175,8
+    CTEXT           "Hack-It! ©1996-2003",IDC_STATIC,10,84,175,9
     CTEXT           "Charles Oliver Nutter\nHeadius, Inc",IDC_STATIC,10,96,
                     175,18
     CTEXT           "Many thanks to Kirk MacManus for beta testing, bug tracking, and moral support!",
                     IDC_STATIC,10,117,175,17
-    CTEXT           "This is v4.01 of Hack-It. Bug reports are requested. Hack-It v4.01 Pro is now available for purchase. $15 makes you a Pro user for life.",
+    CTEXT           "This is v4.02 of Hack-It. Bug reports are requested. Hack-It v4.02 Pro is now available for purchase. $15 makes you a Pro user for life.",
                     IDC_STATIC,10,138,175,33
-    CTEXT           "Please refer to the help file or web page for information on registering Hack-It.",
-                    IDC_STATIC,10,174,175,18
+    CTEXT           "Coming Soon: Deity, the long-awaited successor to Hack-It. All the great Hack-It features plus a powerful, extensible window management platform!",
+                    IDC_STATIC,10,166,175,26
     CTEXT           "headius@headius.com\nhttp://www.headius.com/hackit.html",
                     IDC_STATIC,10,195,175,17,0,WS_EX_TRANSPARENT
     CONTROL         "",IDOK,"Static",SS_ETCHEDFRAME | SS_NOTIFY | 
                     SS_CENTERIMAGE | SS_REALSIZEIMAGE,5,5,185,212
 END
 
-IDD_WINDOWINFO DIALOG DISCARDABLE  0, 0, 186, 132
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_WINDOWINFO DIALOG  0, 0, 186, 132
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Window Information"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -412,7 +414,6 @@ BEGIN
 END
 
 
-#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
@@ -420,7 +421,7 @@ END
 
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION 5,0,0,0
- PRODUCTVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,2,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -435,18 +436,13 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "\0"
-            VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Hack-It v4.01\0"
-            VALUE "FileVersion", "5, 0, 0, 0\0"
-            VALUE "InternalName", "Hack-It v4.01\0"
-            VALUE "LegalCopyright", "Copyright © 1996-1998 Charles Oliver Nutter\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "HackIt.EXE\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Hack-It v4.0\0"
-            VALUE "ProductVersion", "4, 0, 1, 0\0"
-            VALUE "SpecialBuild", "\0"
+            VALUE "FileDescription", "Hack-It v4.02"
+            VALUE "FileVersion", "5, 0, 0, 0"
+            VALUE "InternalName", "Hack-It v4.02"
+            VALUE "LegalCopyright", "Copyright © 1996-1998 Charles Oliver Nutter"
+            VALUE "OriginalFilename", "HackIt.EXE"
+            VALUE "ProductName", "Hack-It v4.0"
+            VALUE "ProductVersion", "4, 0, 2, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -455,8 +451,6 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -464,7 +458,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO 
 BEGIN
     IDD_AUTO, DIALOG
     BEGIN
@@ -633,7 +627,7 @@ END
 // Menu
 //
 
-IDR_MAINMENU MENU DISCARDABLE 
+IDR_MAINMENU MENU 
 BEGIN
     POPUP "Functions"
     BEGIN
@@ -653,7 +647,7 @@ BEGIN
     END
 END
 
-IDR_POPUP MENU DISCARDABLE 
+IDR_POPUP MENU 
 BEGIN
     POPUP ""
     BEGIN
@@ -661,12 +655,12 @@ BEGIN
     END
 END
 
-IDR_BUTTONMENU MENU DISCARDABLE 
+IDR_BUTTONMENU MENU 
 BEGIN
     MENUITEM "Press Button",                ID_BUTTON_PRESS
 END
 
-IDR_WINDOWMENU MENU DISCARDABLE 
+IDR_WINDOWMENU MENU 
 BEGIN
     MENUITEM "Restore",                     ID_RESTORE
     MENUITEM "Minimize",                    ID_MINIMIZE
@@ -679,7 +673,7 @@ BEGIN
     MENUITEM "Window Info...",              ID_WINDOWINFO
 END
 
-IDR_PROCESSMENU MENU DISCARDABLE 
+IDR_PROCESSMENU MENU 
 BEGIN
     MENUITEM "Highest",                     ID_PROCESS_REALTIME
     MENUITEM "High",                        ID_PROCESS_HIGH
@@ -689,12 +683,12 @@ BEGIN
     MENUITEM "End Task",                    ID_PROCESS_ENDTASK
 END
 
-IDR_EDITMENU MENU DISCARDABLE 
+IDR_EDITMENU MENU 
 BEGIN
     MENUITEM "Password Mask",               ID_EDIT_PASSWORDMASK
 END
 
-IDR_SCROLLBARMENU MENU DISCARDABLE 
+IDR_SCROLLBARMENU MENU 
 BEGIN
     MENUITEM "Scroll Up",                   ID_SCROLLBAR_UP
     MENUITEM "Page Up",                     ID_SCROLLBAR_PAGEUP
@@ -703,7 +697,7 @@ BEGIN
     MENUITEM "Scroll Down",                 ID_SCROLLBAR_DOWN
 END
 
-IDR_LISTVIEWMENU MENU DISCARDABLE 
+IDR_LISTVIEWMENU MENU 
 BEGIN
     POPUP "View"
     BEGIN
@@ -714,7 +708,7 @@ BEGIN
     END
 END
 
-IDR_TRANSPARENCY MENU DISCARDABLE 
+IDR_TRANSPARENCY MENU 
 BEGIN
     MENUITEM "None",                        ID_TRANSPARENCY_NONE
     MENUITEM "10%",                         ID_TRANSPARENCY_10
@@ -735,18 +729,18 @@ END
 // Bitmap
 //
 
-IDB_HIGH_CHECKED        BITMAP  DISCARDABLE     "res\\bitmap4.bmp"
-IDB_NORMAL_CHECKED      BITMAP  DISCARDABLE     "res\\bitmap5.bmp"
-IDB_IDLE_CHECKED        BITMAP  DISCARDABLE     "res\\bitmap6.bmp"
-IDB_REALTIME_CHECKED    BITMAP  DISCARDABLE     "res\\bitmap9.bmp"
-IDB_SPLASH              BITMAP  DISCARDABLE     "res\\splash.bmp"
+IDB_HIGH_CHECKED        BITMAP                  "res\\bitmap4.bmp"
+IDB_NORMAL_CHECKED      BITMAP                  "res\\bitmap5.bmp"
+IDB_IDLE_CHECKED        BITMAP                  "res\\bitmap6.bmp"
+IDB_REALTIME_CHECKED    BITMAP                  "res\\bitmap9.bmp"
+IDB_SPLASH              BITMAP                  "res\\splash.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     IDS_ABOUTBOX            "&About Hack-It..."
     IDS_CLOSEAPP            "&Shutdown Hack-It"
