@@ -33,3 +33,8 @@
 *.dll -k 'b'
 *.lib -k 'b'
 *.obj -k 'b'
+*.zip -k 'b'
+*.jar -k 'b'
+*.war -k 'b'
+*.ear -k 'b'
+*.class -k 'b'
