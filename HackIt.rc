@@ -262,7 +262,7 @@ BEGIN
                     35,15
 END
 
-IDD_SETTINGS_WINDOWS DIALOG DISCARDABLE  0, 0, 233, 154
+IDD_SETTINGS_WINDOWS DIALOG DISCARDABLE  0, 0, 233, 170
 STYLE WS_POPUP | WS_CAPTION
 CAPTION "Window Control"
 FONT 8, "MS Sans Serif"
@@ -300,9 +300,9 @@ BEGIN
     CONTROL         "Update of Window Title Can Cause Re-Check of Window Title",
                     IDC_UPDATEAUTO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,
                     117,213,10
-    LTEXT           "Text to Show For Nameless Windows:",IDC_STATIC,5,127,
+    LTEXT           "Text to Show For Nameless Windows:",IDC_STATIC,5,153,
                     121,12,SS_CENTERIMAGE
-    EDITTEXT        IDC_NAMELESSTEXT,138,127,76,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NAMELESSTEXT,137,153,76,12,ES_AUTOHSCROLL
     GROUPBOX        "Refresh Settings",IDC_STATIC,121,5,107,70
     LTEXT           "Refresh: ",IDC_STATIC,125,36,30,8
     LTEXT           "Refresh:",IDC_STATIC,130,60,28,8
@@ -310,6 +310,11 @@ BEGIN
     LTEXT           "ms",IDC_STATIC,201,61,10,8
     CONTROL         "Append Custom Window Menu Items",IDC_SYSMENU_APPEND,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,77,133,10
+    CONTROL         "Use Large Icons in Window List",IDC_USELARGEICONS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,127,116,10
+    CONTROL         "Query for Window Icon First, Class Icon Second",
+                    IDC_WINDOWICONFIRST,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,137,167,10
 END
 
 IDD_SETTINGS_GENERAL DIALOG DISCARDABLE  0, 0, 235, 106
@@ -352,7 +357,7 @@ END
 IDD_ABOUTBOX DIALOGEX 0, 0, 195, 222
 STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
     WS_VISIBLE
-FONT 8, "MS Sans Serif"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     CONTROL         203,IDC_STATIC,"Static",SS_BITMAP,19,10,157,62
     CTEXT           "Hack-It ©1997-2001",IDC_STATIC,10,76,175,8
@@ -552,7 +557,7 @@ BEGIN
         VERTGUIDE, 158
         VERTGUIDE, 198
         TOPMARGIN, 5
-        BOTTOMMARGIN, 149
+        BOTTOMMARGIN, 165
         HORZGUIDE, 24
         HORZGUIDE, 34
         HORZGUIDE, 40
@@ -563,6 +568,8 @@ BEGIN
         HORZGUIDE, 97
         HORZGUIDE, 107
         HORZGUIDE, 119
+        HORZGUIDE, 127
+        HORZGUIDE, 137
     END
 
     IDD_SETTINGS_GENERAL, DIALOG

@@ -215,6 +215,8 @@
 #define IDC_TRANSPARENCYSTATIC          1208
 #define IDC_TRANSPARENCYPERCENTSTATIC   1209
 #define IDC_SYSMENU_APPEND              1210
+#define IDC_USELARGEICONS               1211
+#define IDC_WINDOWICONFIRST             1212
 #define AF_AUTOREALTIME                 2048
 #define ID_ICON_PASTE                   32777
 #define ID_TITLEBAR_COPY                32778
@@ -318,16 +320,6 @@
 #define IDM_TRANSPARENCY_10             0x9220
 #define ID_HELP_TOPICS                  57666
 #define IDC_STATIC                      -1
-#define HM_ADDTOPPEDITEM				WM_USER+100
-#define HM_DELETETOPPEDITEM				WM_USER+101
-#define HM_ADDTRAYYEDITEM				WM_USER+102
-#define HM_DELETETRAYYEDITEM			WM_USER+103
-#define HM_ADDBASICITEM					WM_USER+104
-#define HM_DELETEBASICITEM				WM_USER+105
-#define HM_UNTOPWINDOW					WM_USER+201
-#define HM_TOPWINDOW					WM_USER+202
-#define HM_UNTRAYWINDOW					WM_USER+203
-#define	HM_TRAYWINDOW					WM_USER+204
 
 // Next default values for new objects
 // 
@@ -336,7 +328,7 @@
 #define _APS_NO_MFC                     1
 #define _APS_NEXT_RESOURCE_VALUE        221
 #define _APS_NEXT_COMMAND_VALUE         32898
-#define _APS_NEXT_CONTROL_VALUE         1211
+#define _APS_NEXT_CONTROL_VALUE         1213
 #define _APS_NEXT_SYMED_VALUE           105
 #endif
 #endif

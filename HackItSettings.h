@@ -27,6 +27,8 @@ public:
 	IllegalWindowSpec_set m_IllegalWindowSpecList;
 	string m_NamelessText;
 	char m_LowestShowable;
+	BOOL m_UseLargeIcons;
+	BOOL m_WindowIconFirst;
 	BOOL m_UpdateItems;
 	BOOL m_ShowChilds;
 	BOOL m_HideOnStart;

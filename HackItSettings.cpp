@@ -15,6 +15,8 @@
 HackItSettings::HackItSettings()
 {
 	m_HideOnStart = FALSE;
+	m_UseLargeIcons = FALSE;
+	m_WindowIconFirst = FALSE;
 	m_Transparent = FALSE;
 	m_TransparentPercent = 20;
 	m_ShowChilds = TRUE;
@@ -106,6 +108,8 @@ void HackItSettings::SaveSettings()
 			GetWindowPlacement(::FindWindow("HackIt", NULL), &Placement);
 		
 			WriteRegistryInt(settingsKey, "Hide Hack-It On Start", m_HideOnStart);
+			WriteRegistryInt(settingsKey, "Use Large Icons", m_UseLargeIcons);
+			WriteRegistryInt(settingsKey, "Window Icon First", m_WindowIconFirst);
 			//WriteRegistryInt(settingsKey, "Show Child Windows", m_ShowChilds);
 			WriteRegistryInt(settingsKey, "Show Titleless Windows", m_LowestShowable);
 			WriteRegistryInt(settingsKey, "Text Refreshing", m_UpdateItems);
@@ -331,6 +335,8 @@ void HackItSettings::LoadSettings()
 
 		if (openResult == ERROR_SUCCESS) {
 			m_HideOnStart = GetRegistryInt(settingsKey, "Hide Hack-It On Start", 0);
+			m_UseLargeIcons = GetRegistryInt(settingsKey, "Use Large Icons", 0);
+			m_WindowIconFirst = GetRegistryInt(settingsKey, "Window Icon First", 0);
 			//m_ShowChilds = GetRegistryInt(settingsKey, "Show Child Windows", 0);
 			m_LowestShowable = GetRegistryInt(settingsKey, "Show Titleless Windows", '!');
 			m_UpdateItems = GetRegistryInt(settingsKey, "Text Refreshing", 0);
