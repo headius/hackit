@@ -18,6 +18,7 @@ public:
 	static void WindowSetFont(HWND Window);
 	static void UnTopWindow(HWND window);
 	static void TopWindow(HWND window);
+	static void BottomWindow(HWND window);
 	static void WindowChangeText(HWND Window);
 	static void WindowEnable(HWND Window);
 	static void WindowDisable(HWND Window);

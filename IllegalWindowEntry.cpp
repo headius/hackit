@@ -137,6 +137,7 @@ void IllegalWindowEntryDlg::OnInitDialog()
 	SetDlgItemText(m_hWnd, IDC_ILLEGALFILENAMECOMBO, m_IllegalFilename);
 
 	if (strlen(m_IllegalName) != 0) {
+		SetWindowText(m_hWnd, "Edit Illegal Window Entry");
 		EnableWindow(GetDlgItem(m_hWnd, IDC_ILLEGALNAME), FALSE);
 	}
 

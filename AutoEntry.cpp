@@ -110,8 +110,9 @@ BOOL AutoEntryDlg::OnInitDialog(WPARAM wParam, LPARAM lParam)
 	SendDlgItemMessage(m_hWnd, IDC_WINDOWCOMBO, CB_ADDSTRING, 0, (LONG)"Maximize");
 	SendDlgItemMessage(m_hWnd, IDC_WINDOWCOMBO, CB_SETCURSEL, 0, 0);
 	SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_ADDSTRING, 0, (LONG)"No Change");
-	SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_ADDSTRING, 0, (LONG)"Stays on Top");
-	SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_ADDSTRING, 0, (LONG)"Doesn't Stay on Top");
+	SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_ADDSTRING, 0, (LONG)"Topmost");
+	SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_ADDSTRING, 0, (LONG)"Normal");
+	SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_ADDSTRING, 0, (LONG)"Bottom");
 	SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_SETCURSEL, 0, 0);
 	SendDlgItemMessage(m_hWnd, IDC_VISIBILITYCOMBO, CB_ADDSTRING, 0, (LONG)"No Change");
 	SendDlgItemMessage(m_hWnd, IDC_VISIBILITYCOMBO, CB_ADDSTRING, 0, (LONG)"Visible");
@@ -159,6 +160,8 @@ BOOL AutoEntryDlg::OnInitDialog(WPARAM wParam, LPARAM lParam)
 	if (m_Function >= 0) {
 		AutoFunction *af;
 		char astring[STRING_BUFFER_SIZE];
+
+		SetWindowText(m_hWnd, "Edit Auto Entry");
 
 		SendDlgItemMessage(m_hWndParent, IDC_AUTOENTRIES, LB_GETTEXT, m_Function, (LPARAM)astring);
 		SetDlgItemText(m_hWnd, IDC_ENTRYNAME, astring);
