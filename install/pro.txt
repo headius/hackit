@@ -1,0 +1,71 @@
+License agreement for Hack-It v4.0 (PRO version):
+
+This license agreement is a legal agreement
+between you (either an individual or a single entity) 
+and and the author of this software package.
+
+By installing or otherwise using this software you agree
+to be bound by this agreement. If you do not agree to the
+terms of this Agreement, you may not install or use this
+software.
+
+You may install and use one and only one 
+copy of this software on your computer.
+
+You may not redistribute this program.
+
+You may not offer this program on web sites, newsgroups, and
+other internet media.
+
+You may not disassemble or reverse engineer any part
+of this software. You may not rent or lease the software.
+
+All rights in the Software, except icons and text from other
+programs that appear in the Software are owned by the author
+of this software. The icons of other program are the property
+of those programs' respective authors.
+
+This Agreement will immediately and automatically 
+terminate without notice if you fail to comply
+with any term or condition of this Agreement. You agree 
+upon termination to promptly destroy the Software Product 
+together with all of its component parts, prior and 
+replacement versions, and all copies and modifications 
+thereof in any form.
+
+The author of this software is not liable for any damage
+incurred to your system from use of this software.
+
+The author will not be required to provide any technical
+support for this program. The author may make modifications
+to the software that deprecate features in previous
+releases, and is under no obligation to support said
+deprecations.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, 
+THE SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" AND 
+THE AUTHOR DISCLAIMS ALL OTHER WARRANTIES AND CONDITIONS, 
+EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, CONFORMANCE WITH DESCRIPTION, TITLE 
+AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO 
+EVENT SHALL THE AUTHOR BE LIABLE FOR ANY INDIRECT, 
+INCIDENTAL, CONSEQUENTIAL, SPECIAL OR EXEMPLARY DAMAGES 
+OR LOST PROFITS WHATSOEVER (INCLUDING, WITHOUT LIMITATION, 
+DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, 
+LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) 
+ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE 
+PRODUCT , EVEN IF THE AUTHOR HAS BEEN ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGES. IN ANY CASE, THE AUTHOR´S 
+CUMULATIVE AND ENTIRE LIABILITY TO YOU OR ANY OTHER PARTY 
+FOR ANY LOSS OR DAMAGES RESULTING FROM ANY CLAIMS, DEMANDS 
+OR ACTIONS ARISING OUT OF OR RELATING TO THIS AGREEMENT 
+SHALL NOT EXCEED THE PURCHASE PRICE PAID FOR THIS LICENSE. 
+
+Should any term of these terms and conditions be declared 
+void or unenforceable by any court of competent jurisdiction, 
+such declaration shall have no effect on the remaining terms
+hereof.
+

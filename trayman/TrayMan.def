@@ -1,0 +1,10 @@
+; TrayMan.def : Declares the module parameters for the DLL.
+
+LIBRARY      "TrayMan"
+DESCRIPTION  'Tray Manager for Hack-It version 4.0'
+
+EXPORTS
+StartCBTHook				@1
+StopCBTHook					@2
+StartCallWndProcRetHook		@3
+StopCallWndProcRetHook		@4

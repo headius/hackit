@@ -1,0 +1,100 @@
+//## begin module.epilog preserve=yes
+// General defines to make Hack-It more revisable
+#include "helpids.h"
+
+#define BUTTON_CLASS_TEXT "Button"
+#define STATIC_CLASS_TEXT "Static"
+#define EDIT_CLASS_TEXT "Edit"
+#define COMBOBOX_CLASS_TEXT "ComboBox"
+#define SCROLLBAR_CLASS_TEXT "ScrollBar"
+#define LISTBOX_CLASS_TEXT "ListBox"
+#define LISTVIEW_CLASS_TEXT "SysListView32"
+#define TREEVIEW_CLASS_TEXT "SysTreeView32"
+#define TABCONTROL_CLASS_TEXT "SysTabControl32"
+#define TOOLTIP_CLASS_TEXT "tooltips_class32"
+#define STATUS_CLASS_TEXT "msctls_statusbar32"
+#define TRAYWINDOW_CLASS_TEXT "TrayNotifyWnd"
+#define MDICLIENT_CLASS_TEXT "MDIClient"
+#define TOOLBAR_CLASS_TEXT "ToolbarWindow32"
+#define DIALOG_CLASS_TEXT "#32770"
+
+#define DEFAULT_ICON_INDEX 2
+#define TRAYWINDOW_ICON_INDEX 3
+#define BUTTON_ICON_INDEX 5
+#define STATIC_ICON_INDEX 6
+#define EDIT_ICON_INDEX 7
+#define COMBOBOX_ICON_INDEX 8
+#define SCROLLBAR_ICON_INDEX 9
+#define LISTBOX_ICON_INDEX 10
+#define LISTVIEW_ICON_INDEX 11
+#define TREEVIEW_ICON_INDEX 12
+#define TABCONTROL_ICON_INDEX 13
+#define TOOLTIP_ICON_INDEX 14
+#define STATUS_ICON_INDEX 15
+#define MDICLIENT_ICON_INDEX 16
+#define TOOLBAR_ICON_INDEX 17
+#define DIALOG_ICON_INDEX 18
+// index of the last built-in icon, for determining reusable slots
+#define LAST_ICON_INDEX 18
+
+#define STRING_BUFFER_SIZE 256
+#define STRING_BUFFER_SIZE_LARGE 8096
+
+#define WM_TRAYMESSAGE1 WM_USER+1
+#define WM_TRAYMESSAGE2 WM_USER+2
+#define WM_CREATEDETECTED WM_USER+3
+#define WM_DESTROYDETECTED WM_USER+4
+#define WM_POSCHANGEDDETECTED WM_USER+5
+#define WM_SETTEXTDETECTED WM_USER+6
+#define WM_SYSMENUDETECTED WM_USER+7
+#define WM_HACKITFUNCTIONDETECTED WM_USER+8
+#define WM_SYSMENUENDED WM_USER+9
+
+#define WM_EXPLORERBASTARDMESSAGE 0x0313
+
+// null actions
+#define AUTO_ACTION_NOCHANGE 0
+#define AUTO_ACTION_NODESTROY 0
+
+// Window AUTO_ACTIONs
+#define AUTO_ACTION_RESTORE 1
+#define AUTO_ACTION_MINIMIZE 2
+#define AUTO_ACTION_MAXIMIZE 3
+
+// Topmost AUTO_ACTIONs
+#define AUTO_ACTION_STAYONTOP 1
+#define AUTO_ACTION_NOSTAYONTOP 2
+
+// Visiblity AUTO_ACTIONs
+#define AUTO_ACTION_VISIBLE 1
+#define AUTO_ACTION_HIDDEN 2
+
+// Destruction AUTO_ACTIONs
+//#define AUTO_ACTION_PREVENTCREATE 1
+#define AUTO_ACTION_CLOSEWINDOW 1
+#define AUTO_ACTION_ENDTASK 2
+
+// Priority actions
+#define AUTO_ACTION_IDLE 1
+#define AUTO_ACTION_NORMAL 2
+#define AUTO_ACTION_HIGH 3
+#define AUTO_ACTION_REALTIME 4
+
+// Special AUTO_ACTIONs
+#define AUTO_ACTION_PRESSBUTTON 1
+#define AUTO_ACTION_ENTERTEXT 2
+
+// Alternate targets
+#define AUTO_TARGET_NONE 0
+#define AUTO_TARGET_CHILD 1
+#define AUTO_TARGET_PARENT 2
+
+#define INITIAL_WIDTH 400
+#define INITIAL_HEIGHT 300
+
+// Refresh methods
+#define REFRESH_PERSISTANT 0
+#define REFRESH_MANUAL 1
+#define REFRESH_TIMED 2
+
+#define REFRESH_MENU_POSITION 2
