@@ -311,10 +311,11 @@ BEGIN
     CONTROL         "Append Custom Window Menu Items",IDC_SYSMENU_APPEND,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,77,133,10
     CONTROL         "Use Large Icons in Window List",IDC_USELARGEICONS,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,127,116,10
+                    "Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,5,
+                    127,116,10
     CONTROL         "Query for Window Icon First, Class Icon Second",
-                    IDC_WINDOWICONFIRST,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,137,167,10
+                    IDC_WINDOWICONFIRST,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,5,137,167,10
 END
 
 IDD_SETTINGS_GENERAL DIALOG DISCARDABLE  0, 0, 235, 106
