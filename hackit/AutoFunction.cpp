@@ -106,11 +106,14 @@ void AutoFunction::execute(HackItDlg *dlg, AutoFunction *af, HWND window) {
 	}
 
 	switch (af->getTopmostAction()) {
-	case AUTO_ACTION_STAYONTOP:
+	case AUTO_ACTION_TOPMOST:
 		WindowFunctions::TopWindow(window);
 		break;
-	case AUTO_ACTION_NOSTAYONTOP:
+	case AUTO_ACTION_NOTOPMOST:
 		WindowFunctions::TopWindow(window);
+		break;
+	case AUTO_ACTION_BOTTOM:
+		WindowFunctions::BottomWindow(window);
 		break;
 	}
 

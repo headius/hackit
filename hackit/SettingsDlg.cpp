@@ -419,60 +419,158 @@ void SettingsDlg::SelchangeFunctions()
 		SendDlgItemMessage(m_hWndFunctionDlg, IDC_AUTOENTRIES, LB_GETTEXT, index, (UINT)(LPCTSTR)astring);
 		af = (AutoFunction*)SendDlgItemMessage(m_hWndFunctionDlg, IDC_AUTOENTRIES, LB_GETITEMDATA, index, 0);
 		
-		sprintf(infobuf, "Class: \t\t\t%s\r\n", af->getWinClass().c_str());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Title: \t\t\t%s\r\n", af->getTitle().c_str());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "File Name: \t\t%s\r\n", af->getFilename().c_str());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Case Sensitive: \t\t%d\r\n", af->getCaseSensitive());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Window Action: \t\t%d\r\n", af->getWindowAction());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Topmost Action: \t\t%d\r\n", af->getTopmostAction());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Visiblity Action: \t\t%d\r\n", af->getVisibilityAction());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		if (af->getWinClass().length() > 0) {
+			sprintf(infobuf, "Class: \t\t%s\r\n", af->getWinClass().c_str());
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getTitle().length() > 0) {
+			sprintf(infobuf, "Title: \t\t%s\r\n", af->getTitle().c_str());
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getFilename().length() > 0) {
+			sprintf(infobuf, "File Name: \t%s\r\n", af->getFilename().c_str());
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getCaseSensitive()) {
+			sprintf(infobuf, "Case Sensitive: \tTrue\r\n");
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getWindowAction()) {
+			switch (af->getWindowAction()) {
+			case AUTO_ACTION_RESTORE:
+				sprintf(infobuf, "Window Action: \tRestore\r\n");
+				break;
+			case AUTO_ACTION_MINIMIZE:
+				sprintf(infobuf, "Window Action: \tMinimize\r\n");
+				break;
+			case AUTO_ACTION_MAXIMIZE:
+				sprintf(infobuf, "Window Action: \tMaximize\r\n");
+				break;
+			}
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getTopmostAction()) {
+			switch (af->getTopmostAction()) {
+			case AUTO_ACTION_NOTOPMOST:
+				sprintf(infobuf, "Topmost Action: \tStandard\r\n");
+				break;
+			case AUTO_ACTION_TOPMOST:
+				sprintf(infobuf, "Topmost Action: \tTopmost\r\n");
+				break;
+			case AUTO_ACTION_BOTTOM:
+				sprintf(infobuf, "Topmost Action: \tBottom\r\n");
+				break;
+			}
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getVisibilityAction()) {
+			switch (af->getVisibilityAction()) {
+			case AUTO_ACTION_VISIBLE:
+				sprintf(infobuf, "Visibility Action: \tVisible\r\n");
+				break;
+			case AUTO_ACTION_HIDDEN:
+				sprintf(infobuf, "Visibility Action: \tHidden\r\n");
+				break;
+			}
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
 		if (MySetLayeredWindowAttributes) {
-			sprintf(infobuf, "Transparency: \t\t%d\r\n", af->getTransparency());
+			switch (af->getTransparency()) {
+			case 0:
+				sprintf(infobuf, "Transparency: \tNone\r\n");
+				break;
+			default:
+				sprintf(infobuf, "Transparency: \t%d0%%\r\n", af->getTransparency());
+				break;
+			}
 			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
 		}
-		sprintf(infobuf, "Priority Action: \t\t%d\r\n", af->getPriorityAction());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Destruction Action: \t\t%d\r\n", af->getDestructionAction());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Resize: \t\t\t%d\r\n", af->getResize());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+
+		if (af->getPriorityAction()) {
+			switch (af->getPriorityAction()) {
+			case AUTO_ACTION_IDLE:
+				sprintf(infobuf, "Priority Action: \tIdle\r\n");
+				break;
+			case AUTO_ACTION_NORMAL:
+				sprintf(infobuf, "Priority Action: \tNormal\r\n");
+				break;
+			case AUTO_ACTION_HIGH:
+				sprintf(infobuf, "Priority Action: \tHigh\r\n");
+				break;
+			case AUTO_ACTION_REALTIME:
+				sprintf(infobuf, "Priority Action: \tReal-Time\r\n");
+				break;
+			}
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getDestructionAction()) {
+			switch (af->getDestructionAction()) {
+			case AUTO_ACTION_CLOSEWINDOW:
+				sprintf(infobuf, "Destruction Action: \tClose Window\r\n");
+				break;
+			case AUTO_ACTION_ENDTASK:
+				sprintf(infobuf, "Destruction Action: \tEnd Task\r\n");
+				break;
+			}
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
 		if (af->getResize()) {
-			sprintf(infobuf, "\tWidth: \t\t%d\r\n", af->getResizeW());
+			sprintf(infobuf, "Resize Width: \t%d\r\n", af->getResizeW());
 			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-			sprintf(infobuf, "\tHeight: \t\t%d\r\n", af->getResizeH());
+			sprintf(infobuf, "Resize Height: \t%d\r\n", af->getResizeH());
 			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
 		}
-		sprintf(infobuf, "Move: \t\t\t%d\r\n", af->getMove());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+
 		if (af->getMove()) {
-			sprintf(infobuf, "\tX: \t\t%d\r\n", af->getMoveX());
+			sprintf(infobuf, "Move X: \t\t%d\r\n", af->getMoveX());
 			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-			sprintf(infobuf, "\tY: \t\t%d\r\n", af->getMoveY());
+			sprintf(infobuf, "Move Y: \t\t%d\r\n", af->getMoveY());
 			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
 		}
-		sprintf(infobuf, "Special Action: \t\t%d\r\n", af->getSpecialAction());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+
 		if (af->getSpecialAction()) {
-			sprintf(infobuf, "\tData: \t\t%s\r\n", af->getSpecialData().c_str());
+			switch (af->getSpecialAction()) {
+			case AUTO_ACTION_PRESSBUTTON:
+				sprintf(infobuf, "Special Action: \tPress Button\r\n");
+				break;
+			}
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+			sprintf(infobuf, "Special Data: \t%s\r\n", af->getSpecialData().c_str());
 			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
 		}
-		sprintf(infobuf, "Alternate Target: \t\t%d\r\n", af->getAlternateTarget());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		if (af->getAlternateTarget() == AUTO_TARGET_CHILD) {
-			sprintf(infobuf, "\tChild: \t\t%s\r\n", af->getAlternateData().c_str());
+
+		if (af->getAlternateTarget()) {
+			switch (af->getAlternateTarget()) {
+			case AUTO_TARGET_CHILD:
+				sprintf(infobuf, "Alternate Target: \tChild\r\n");
+				strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+				sprintf(infobuf, "Child: \t\t%s\r\n", af->getAlternateData().c_str());
+				break;
+			case AUTO_TARGET_PARENT:
+				sprintf(infobuf, "Alternate Target: \tParent\r\n");
+				break;
+			}
 			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
 		}
-		sprintf(infobuf, "Tray Icon: \t\t%d\r\n", af->getTrayIcon());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
-		sprintf(infobuf, "Top-level Only: \t\t%d\r\n", af->getTopOnly());
-		strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+
+		if (af->getTrayIcon()) {
+			sprintf(infobuf, "Tray Icon: \tTrue\r\n");
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
+
+		if (af->getTopOnly()) {
+			sprintf(infobuf, "Top-level Only: \tTrue\r\n");
+			strncat(info, infobuf, STRING_BUFFER_SIZE_LARGE);
+		}
 	}
 	
 	SetDlgItemText(m_hWndFunctionDlg, IDC_INFOEDIT, info);
