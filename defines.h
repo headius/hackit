@@ -108,3 +108,9 @@
 // Timer tags
 #define CONSOLE_WINDOW_POLL_TIMER 1000
 #define WINDOW_LIST_CLEANER_TIMER 1001
+
+// shellhook registration constants
+#define RSH_UNREGISTER	0
+#define RSH_REGISTER	1
+#define RSH_PROGMAN		2
+#define RSH_TASKMAN		3
