@@ -46,7 +46,7 @@
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="The Window List">
-				<param name="Local" value="WindowList.html">
+				<param name="Local" value="window_list.html">
 				</OBJECT>
 			<UL>
 				<LI> <OBJECT type="text/sitemap">
@@ -56,6 +56,14 @@
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Child Window Items">
 					<param name="Local" value="ChildWindowItems.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Visible Windows">
+					<param name="Local" value="visible_windows.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Hidden Windows">
+					<param name="Local" value="hidden_windows.html">
 					</OBJECT>
 			</UL>
 			<LI> <OBJECT type="text/sitemap">
