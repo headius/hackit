@@ -166,6 +166,16 @@ void DeityListInsert(DEITY_LIST* list, DEITY_NODE* node, int index) {
 	}
 }
 
+DEITY_NODE* DeityListGetHeadNode(DEITY_LIST* list) {
+	// to do: add memory checking
+	return list->headElement;
+}
+
+DEITY_NODE* DeityListGetTailNode(DEITY_LIST* list) {
+	// to do: add memory checking
+	return list->tailElement;
+}
+
 DEITY_NODE* DeityListGetAt(DEITY_LIST* list, int index) {
 	if (IsBadReadPtr(list, sizeof(DEITY_LIST))) {
 		return NULL;

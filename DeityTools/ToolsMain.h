@@ -53,7 +53,7 @@ DEITY_NODE* DeityListGetHeadNode(DEITY_LIST* list);
 DEITY_NODE* DeityListGetTailNode(DEITY_LIST* list);
 void DeityListClear(DEITY_LIST* list);
 
-void DeityMapPut(DEITY_MAP* map, DEITY_NODE* node, int hash);
+void DeityMapPut(DEITY_MAP* map, DEITY_NODE* node);
 DEITY_NODE* DeityMapGet(DEITY_MAP* map, int hash);
 void DeityMapRemove(DEITY_MAP* map, int hash);
 void DeityMapRehash(DEITY_MAP* map, int hashSize);
