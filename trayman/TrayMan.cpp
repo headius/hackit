@@ -83,6 +83,7 @@ LRESULT CALLBACK CBTHook(int nCode, WPARAM wParam, LPARAM lParam) {
 		break;
 	case HCBT_CREATEWND:
 		::PostMessage(HackItWnd, WM_CREATEDETECTED, (WPARAM)((CBT_CREATEWND*)lParam)->lpcs, wParam);
+		GetSystemMenu((HWND)wParam, FALSE);
 		break;
 	case HCBT_DESTROYWND:
 		::PostMessage(HackItWnd, WM_DESTROYDETECTED, lParam, wParam);
