@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
+    <classpathentry kind="src" path="src"/>
+    <classpathentry kind="src" path="/JBoss"/>
+    <classpathentry kind="lib" path="/JBoss/lib/jboss-jdbc_ext.jar"/>
+    <classpathentry kind="lib" path="/JBoss/lib/ext/jboss-j2ee.jar"/>
+    <classpathentry kind="lib" path="/JBoss/lib/ext/jnpserver.jar"/>
+    <classpathentry kind="output" path="bin"/>
+</classpath>
