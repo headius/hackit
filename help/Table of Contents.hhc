@@ -50,12 +50,12 @@
 				</OBJECT>
 			<UL>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Top-Level Window Items">
-					<param name="Local" value="TopLevelWindowItems.html">
+					<param name="Name" value="Top-Level Windows">
+					<param name="Local" value="top_level_windows.html">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
-					<param name="Name" value="Child Window Items">
-					<param name="Local" value="ChildWindowItems.html">
+					<param name="Name" value="Child Windows">
+					<param name="Local" value="child_windows.html">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Visible Windows">
@@ -68,7 +68,7 @@
 			</UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="The Status Bar">
-				<param name="Local" value="StatusBar.html">
+				<param name="Local" value="status_bar.html">
 				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
