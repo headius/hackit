@@ -6,20 +6,20 @@
 [Setup]
 Bits=32
 AppName=Hack-It 25-Seat License
-AppVerName=Hack-It v4.01 25-Seat Site License
+AppVerName=Hack-It v4.02 25-Seat Site License
 AppCopyright=Copyright © 1997-2000 Headius, Inc.
 DefaultDirName={pf}\Hack-It
 DefaultGroupName=Startup
 MinVersion=4,4
-LicenseFile=C:\My Projects\HackIt\Site.txt
+LicenseFile=..\Install\Pro.txt
 OutputDir=Site
 OutputBaseFileName=SetupSL
 
 [Files]
-Source: "C:\My Projects\HackIt\Pro\HackIt.exe"; DestDir: "{app}"
-Source: "C:\My Projects\HackIt\Pro\Trayman.dll"; DestDir: "{app}"
-Source: "C:\My Projects\HackItHelp\HackIt.chm"; DestDir: "{app}"
-Source: "C:\My Projects\HackIt\Site.txt"; DestDir: "{app}"
+Source: "..\Pro\HackIt.exe"; DestDir: "{app}"
+Source: "..\Pro\Trayman.dll"; DestDir: "{app}"
+Source: "..\Help\HackIt.chm"; DestDir: "{app}"
+Source: "..\Install\Pro.txt"; DestDir: "{app}"
 
 [Icons]
 Name: "{userstartup}\Hack-It Pro"; Filename: "{app}\HackIt.exe"; WorkingDir: "{app}"
