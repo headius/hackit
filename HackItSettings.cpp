@@ -47,8 +47,6 @@ HackItSettings::HackItSettings()
 	m_UpdateAddRemove = FALSE;
 	m_UpdateAuto = FALSE;
 	m_NamelessText = "<no title>";
-	m_ConsolePolling = TRUE;
-	m_ConsolePollingTime = 500;
 	m_WindowListCleaning = TRUE;
 	m_WindowListCleanerTime = 1000;
 }
@@ -134,8 +132,6 @@ void HackItSettings::SaveSettings()
 			WriteRegistryInt(settingsKey, "System Menu Transparency", m_SysMenuTransparency);
 			WriteRegistryInt(settingsKey, "Update Adds Or Removes", m_UpdateAddRemove);
 			WriteRegistryInt(settingsKey, "Update Checks Auto Functions", m_UpdateAuto);
-			WriteRegistryInt(settingsKey, "Console Polling", m_ConsolePolling);
-			WriteRegistryInt(settingsKey, "Console Polling Time", m_ConsolePollingTime);
 			WriteRegistryInt(settingsKey, "Window List Cleaning", m_WindowListCleaning);
 			WriteRegistryInt(settingsKey, "Window List Cleaner Time", m_WindowListCleanerTime);
 			WriteRegistryString(settingsKey, "Nameless Text", m_NamelessText.c_str());
@@ -361,8 +357,6 @@ void HackItSettings::LoadSettings()
 			m_SysMenuTransparency = GetRegistryInt(settingsKey, "System Menu Transparency", FALSE);
 			m_UpdateAddRemove = GetRegistryInt(settingsKey, "Update Adds Or Removes", FALSE);
 			m_UpdateAuto = GetRegistryInt(settingsKey, "Update Checks Auto Functions", FALSE);
-			m_ConsolePolling = GetRegistryInt(settingsKey, "Console Polling", TRUE);
-			m_ConsolePollingTime = GetRegistryInt(settingsKey, "Console Polling Time", 500);
 			m_WindowListCleaning = GetRegistryInt(settingsKey, "Window List Cleaning", TRUE);
 			m_WindowListCleanerTime = GetRegistryInt(settingsKey, "Window List Cleaner Time", 1000);
 			GetRegistryString(settingsKey, "Nameless Text", "<no title>", astring, STRING_BUFFER_SIZE);

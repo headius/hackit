@@ -59,8 +59,6 @@ public:
 	BOOL m_SysMenuAppend;
 	BOOL m_UpdateAddRemove;
 	BOOL m_UpdateAuto;
-	BOOL m_ConsolePolling;
-	int m_ConsolePollingTime;
 	BOOL m_WindowListCleaning;
 	int m_WindowListCleanerTime;
 	HackItSettings();

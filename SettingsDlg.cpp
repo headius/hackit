@@ -583,12 +583,10 @@ void SettingsDlg::InitWindowDlg() {
 	::CheckDlgButton(m_hWndWindowDlg, IDC_TOPMOSTCHILDREN, (m_Settings.m_ChildrenInTopmostList? MF_CHECKED : MF_UNCHECKED));
 	::CheckDlgButton(m_hWndWindowDlg, IDC_UPDATEADDREMOVE, (m_Settings.m_UpdateAddRemove? MF_CHECKED : MF_UNCHECKED));
 	::CheckDlgButton(m_hWndWindowDlg, IDC_UPDATEAUTO, (m_Settings.m_UpdateAuto? MF_CHECKED : MF_UNCHECKED));
-	::CheckDlgButton(m_hWndWindowDlg, IDC_CONSOLEPOLL, (m_Settings.m_ConsolePolling? MF_CHECKED : MF_UNCHECKED));
 	::CheckDlgButton(m_hWndWindowDlg, IDC_CLEANLIST, (m_Settings.m_WindowListCleaning? MF_CHECKED : MF_UNCHECKED));
 	::CheckDlgButton(m_hWndWindowDlg, IDC_USELARGEICONS, (m_Settings.m_UseLargeIcons? MF_CHECKED : MF_UNCHECKED));
 	::CheckDlgButton(m_hWndWindowDlg, IDC_WINDOWICONFIRST, (m_Settings.m_WindowIconFirst? MF_CHECKED : MF_UNCHECKED));
 
-	SetDlgItemInt(m_hWndWindowDlg, IDC_CONSOLEPOLLINGTIME, m_Settings.m_ConsolePollingTime, FALSE);
 	SetDlgItemInt(m_hWndWindowDlg, IDC_WINDOWLISTCLEANERTIME, m_Settings.m_WindowListCleanerTime, FALSE);
 	//SendDlgItemMessage(m_hWndWindowDlg, IDC_DELAYSPIN, UDM_SETRANGE, 0, MAKELONG(10, 1));
 	SetDlgItemText(m_hWndWindowDlg, IDC_NAMELESSTEXT, m_Settings.m_NamelessText.c_str());
@@ -904,9 +902,6 @@ LRESULT SettingsDlg::OnWindowDlgCommand(WPARAM wParam, LPARAM lParam)
 			GetDlgItemText(m_hWndWindowDlg, IDC_NAMELESSTEXT, buffer, STRING_BUFFER_SIZE);
 			m_Settings.m_NamelessText = buffer;
 			break;
-		case IDC_CONSOLEPOLLINGTIME:
-			m_Settings.m_ConsolePollingTime = GetDlgItemInt(m_hWndWindowDlg, IDC_CONSOLEPOLLINGTIME, NULL, FALSE);
-			break;
 		case IDC_WINDOWLISTCLEANERTIME:
 			m_Settings.m_WindowListCleanerTime = GetDlgItemInt(m_hWndWindowDlg, IDC_WINDOWLISTCLEANERTIME, NULL, FALSE);
 			break;
@@ -935,13 +930,6 @@ LRESULT SettingsDlg::OnWindowDlgCommand(WPARAM wParam, LPARAM lParam)
 				m_Settings.m_UpdateItems = FALSE;
 			} else {
 				m_Settings.m_UpdateItems = TRUE;
-			}
-			break;
-		case IDC_CONSOLEPOLL:
-			if (m_Settings.m_ConsolePolling) {
-				m_Settings.m_ConsolePolling = FALSE;
-			} else {
-				m_Settings.m_ConsolePolling = TRUE;
 			}
 			break;
 		case IDC_CLEANLIST:
