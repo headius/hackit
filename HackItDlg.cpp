@@ -216,7 +216,7 @@ HackItDlg::HackItDlg(HINSTANCE hInstance)
 	m_hWnd = CreateWindowEx(
 		WS_EX_CONTEXTHELP | WS_EX_WINDOWEDGE | (m_Settings.m_AlwaysOnTop ? WS_EX_TOPMOST : 0),
 		"HackIt",
-		"Hack-It v4.0 RC3",
+		"Hack-It v4.0",
 		WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | m_Settings.m_PlacementShow,
 		m_Settings.m_PlacementLeft,
 		m_Settings.m_PlacementTop,

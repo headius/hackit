@@ -59,12 +59,10 @@ void AutoEntryDlg::OnOK()
 	function->setFilename(filename);
 
 	if (strlen(winclass) == 0 && strlen(filename) == 0 && strlen(title) == 0) {
-		if (MessageBox(m_hWnd, "You have not entered any criteria to match.\nThis function could apply to ALL windows, including children.\nAre you sure you want to do this?",
+		MessageBox(m_hWnd, "You have not entered any criteria to match. If you want this specification to match all windows,\nyou should enter a '*' character in at least one field.",
 			"Global Function Warning",
-			MB_YESNO | MB_ICONEXCLAMATION) & IDOK) {
-
-			return;
-		}
+			MB_OK | MB_ICONEXCLAMATION);
+		return;
 	}
 
 	GetDlgItemText(m_hWnd, IDC_SPECIALTEXT, text, STRING_BUFFER_SIZE);
