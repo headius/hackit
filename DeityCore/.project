@@ -3,6 +3,8 @@
 	<name>DeityCore</name>
 	<comment></comment>
 	<projects>
+		<project>DeityHook</project>
+		<project>DeityTools</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>
