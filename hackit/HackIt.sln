@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HackIt", "HackIt.vcproj", "{3345B60F-60B1-443D-9498-FEBCB97E66F3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrayMan2", "TrayMan\TrayMan2.vcproj", "{42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Pro
+		ConfigName.2 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{3345B60F-60B1-443D-9498-FEBCB97E66F3}.0 = {42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3345B60F-60B1-443D-9498-FEBCB97E66F3}.Debug.ActiveCfg = Debug|Win32
+		{3345B60F-60B1-443D-9498-FEBCB97E66F3}.Debug.Build.0 = Debug|Win32
+		{3345B60F-60B1-443D-9498-FEBCB97E66F3}.Pro.ActiveCfg = Pro|Win32
+		{3345B60F-60B1-443D-9498-FEBCB97E66F3}.Pro.Build.0 = Pro|Win32
+		{3345B60F-60B1-443D-9498-FEBCB97E66F3}.Release.ActiveCfg = Release|Win32
+		{3345B60F-60B1-443D-9498-FEBCB97E66F3}.Release.Build.0 = Release|Win32
+		{42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}.Debug.ActiveCfg = Debug|Win32
+		{42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}.Debug.Build.0 = Debug|Win32
+		{42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}.Pro.ActiveCfg = Pro|Win32
+		{42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}.Pro.Build.0 = Pro|Win32
+		{42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}.Release.ActiveCfg = Release|Win32
+		{42AF330C-1F63-45AA-BC2D-7DA61D80CCD3}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
