@@ -1572,8 +1572,6 @@ void HackItDlg::Settings()
 }
 
 
-static void (WINAPI *SwitchToThisWindow)(HWND, int) = NULL;
-
 LRESULT HackItDlg::OnDoubleClickTree1(NMHDR *pNMHDR)
 {
 	POINT mypoint;
@@ -1581,11 +1579,11 @@ LRESULT HackItDlg::OnDoubleClickTree1(NMHDR *pNMHDR)
 	WINDOWPLACEMENT wndPlace;
 	HWND window;
 
-	if (!SwitchToThisWindow) {
+	/*if (!SwitchToThisWindow) {
 		SwitchToThisWindow = (void (WINAPI *)(HWND, int)) GetProcAddress(
 			GetModuleHandle("USER32.DLL"),
 			"SwitchToThisWindow");
-	}
+	}*/
 
 	GetCursorPos(&mypoint);
 	::ScreenToClient(m_WindowList, &mypoint);
