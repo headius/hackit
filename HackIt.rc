@@ -145,21 +145,21 @@ BEGIN
     EDITTEXT        IDC_RESIZEWIDTH,185,89,36,12,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "Spin1",IDC_WIDTHSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
                     UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
-                    UDS_HOTTRACK,214,89,9,12
+                    UDS_NOTHOUSANDS | UDS_HOTTRACK,214,89,9,12
     EDITTEXT        IDC_RESIZEHEIGHT,229,89,36,12,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "Spin2",IDC_HEIGHTSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
                     UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
-                    UDS_HOTTRACK,258,89,9,12
+                    UDS_NOTHOUSANDS | UDS_HOTTRACK,258,89,9,12
     CONTROL         "Move:",IDC_MOVECHECK,"Button",BS_AUTOCHECKBOX | 
                     BS_VCENTER | WS_TABSTOP,114,102,41,12
-    EDITTEXT        IDC_MOVEX,185,102,36,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_MOVEX,185,102,36,12,ES_AUTOHSCROLL
     CONTROL         "Spin3",IDC_XSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
                     UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
-                    UDS_HOTTRACK,214,102,9,12
-    EDITTEXT        IDC_MOVEY,229,102,36,12,ES_AUTOHSCROLL | ES_NUMBER
+                    UDS_NOTHOUSANDS | UDS_HOTTRACK,214,102,9,12
+    EDITTEXT        IDC_MOVEY,229,102,36,12,ES_AUTOHSCROLL
     CONTROL         "Spin5",IDC_YSPIN,"msctls_updown32",UDS_SETBUDDYINT | 
                     UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
-                    UDS_HOTTRACK,258,102,9,12
+                    UDS_NOTHOUSANDS | UDS_HOTTRACK,258,102,9,12
     COMBOBOX        IDC_SPECIALCOMBO,185,113,80,62,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP
     EDITTEXT        IDC_SPECIALTEXT,185,126,80,12,ES_AUTOHSCROLL
@@ -359,7 +359,7 @@ END
 IDD_ABOUTBOX DIALOGEX 0, 0, 195, 222
 STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
     WS_VISIBLE
-FONT 8, "MS Sans Serif", 0, 0, 0x1
+FONT 8, "MS Sans Serif"
 BEGIN
     CONTROL         203,IDC_STATIC,"Static",SS_BITMAP,19,10,157,62
     CTEXT           "Hack-It ©1997-2001",IDC_STATIC,10,76,175,8
@@ -368,7 +368,7 @@ BEGIN
                     175,18
     CTEXT           "Many thanks to Kirk MacManus for beta testing, bug tracking, and moral support!",
                     IDC_STATIC,10,117,175,17
-    CTEXT           "This is v4.0 of Hack-It. Bug reports are requested. Hack-It v4.0 PRO is now available for purchase. $15 makes you a PRO user for life.",
+    CTEXT           "This is v4.01 of Hack-It. Bug reports are requested. Hack-It v4.01 Pro is now available for purchase. $15 makes you a Pro user for life.",
                     IDC_STATIC,10,138,175,33
     CTEXT           "Please refer to the help file or web page for information on registering Hack-It.",
                     IDC_STATIC,10,174,175,18
@@ -437,15 +437,15 @@ BEGIN
         BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Hack-It v4.0\0"
+            VALUE "FileDescription", "Hack-It v4.01\0"
             VALUE "FileVersion", "5, 0, 0, 0\0"
-            VALUE "InternalName", "Hack-It v4.0\0"
+            VALUE "InternalName", "Hack-It v4.01\0"
             VALUE "LegalCopyright", "Copyright © 1996-1998 Charles Oliver Nutter\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "HackIt.EXE\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "Hack-It v4.0\0"
-            VALUE "ProductVersion", "4, 0, 0, 0\0"
+            VALUE "ProductVersion", "4, 0, 1, 0\0"
             VALUE "SpecialBuild", "\0"
         END
     END

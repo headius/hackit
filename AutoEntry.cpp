@@ -75,8 +75,8 @@ void AutoEntryDlg::OnOK()
 	function->setResizeH(GetDlgItemInt(m_hWnd, IDC_RESIZEHEIGHT, NULL, FALSE));
 	function->setResizeW(GetDlgItemInt(m_hWnd, IDC_RESIZEWIDTH, NULL, FALSE));
 	function->setMove(IsDlgButtonChecked(m_hWnd, IDC_MOVECHECK));
-	function->setMoveX(GetDlgItemInt(m_hWnd, IDC_MOVEX, NULL, FALSE));
-	function->setMoveY(GetDlgItemInt(m_hWnd, IDC_MOVEY, NULL, FALSE));
+	function->setMoveX(GetDlgItemInt(m_hWnd, IDC_MOVEX, NULL, TRUE));
+	function->setMoveY(GetDlgItemInt(m_hWnd, IDC_MOVEY, NULL, TRUE));
 
 	function->setWindowAction(SendDlgItemMessage(m_hWnd, IDC_WINDOWCOMBO, CB_GETCURSEL, 0, 0));
 	function->setTopmostAction(SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_GETCURSEL, 0, 0));
@@ -154,6 +154,13 @@ BOOL AutoEntryDlg::OnInitDialog(WPARAM wParam, LPARAM lParam)
 	SendDlgItemMessage(m_hWnd, IDC_ALTERNATECOMBO, CB_ADDSTRING, 0, (LONG)"Act on Child");
 	SendDlgItemMessage(m_hWnd, IDC_ALTERNATECOMBO, CB_ADDSTRING, 0, (LONG)"Act on Parent");
 	SendDlgItemMessage(m_hWnd, IDC_ALTERNATECOMBO, CB_SETCURSEL, 0, 0);
+
+	int max = UD_MAXVAL / 2;
+	SendDlgItemMessage(m_hWnd, IDC_XSPIN, UDM_SETRANGE, 0, MAKELPARAM(max, -max));
+	SendDlgItemMessage(m_hWnd, IDC_YSPIN, UDM_SETRANGE, 0, MAKELPARAM(max, -max));
+	SendDlgItemMessage(m_hWnd, IDC_WIDTHSPIN, UDM_SETRANGE, 0, MAKELPARAM(UD_MAXVAL, 0));
+	SendDlgItemMessage(m_hWnd, IDC_HEIGHTSPIN, UDM_SETRANGE, 0, MAKELPARAM(UD_MAXVAL, 0));
+
 	CheckDlgButton(m_hWnd, IDC_CASESENSITIVE, FALSE);
 	CheckDlgButton(m_hWnd, IDC_TOPCHECK, TRUE);
 
@@ -175,8 +182,8 @@ BOOL AutoEntryDlg::OnInitDialog(WPARAM wParam, LPARAM lParam)
 		SetDlgItemText(m_hWnd, IDC_ALTERNATETEXT, af->getAlternateData().c_str());
 		SetDlgItemInt(m_hWnd, IDC_RESIZEHEIGHT, af->getResizeH(), FALSE);
 		SetDlgItemInt(m_hWnd, IDC_RESIZEWIDTH, af->getResizeW(), FALSE);
-		SetDlgItemInt(m_hWnd, IDC_MOVEX, af->getMoveX(), FALSE);
-		SetDlgItemInt(m_hWnd, IDC_MOVEY, af->getMoveY(), FALSE);
+		SetDlgItemInt(m_hWnd, IDC_MOVEX, af->getMoveX(), TRUE);
+		SetDlgItemInt(m_hWnd, IDC_MOVEY, af->getMoveY(), TRUE);
 
 		SendDlgItemMessage(m_hWnd, IDC_WINDOWCOMBO, CB_SETCURSEL, af->getWindowAction(), 0);
 		SendDlgItemMessage(m_hWnd, IDC_TOPMOSTCOMBO, CB_SETCURSEL, af->getTopmostAction(), 0);
