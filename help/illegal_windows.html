@@ -14,26 +14,92 @@
 
 
 
-<h2 style="page-break-after:auto">Illegal Windows</h2>
-
-<p>In the Settings dialog, the page marked “Illegal Windows” lets you
-
-configure window specifications that will ignored by Hack-It. There are many,
-
-many windows on a typical system at any given time, and a great deal of those
-
-windows are not ones you will normally want to show up in the list or be able to
-
-manipulate. Some are connected to system-critical processes that are best left
-
-alone. By specifying them as “Illegal” you can effectively hide them from
-
-anyone using Hack-It, to make for a safer and healthier environment.
-
-<p><img border="0" src="images/illega10.gif" width="427" height="338"></p>
-
-<p>&nbsp;</p>
-<p><img border="0" src="images/illega11.gif" width="228" height="179"></p>
+<TABLE BORDER="0" WIDTH="100%">
+  <TR>
+    <TD WIDTH="100%" BGCOLOR="#C0C0C0">
+      <H2><FONT FACE="Arial">Hack-It v4.0 Help</FONT></H2>
+    </TD>
+  </TR>
+  <TR>
+    <TD WIDTH="100%" BGCOLOR="#000000"><FONT COLOR="#FFFFFF" FACE="Arial"><B>Illegal
+      Windows</B></FONT></TD>
+  </TR>
+  <TR>
+    <TD WIDTH="100%">
+      <P ALIGN="center"><IMG BORDER="0" SRC="images/illegal_windows.png" width="270" height="334"></P>
+      <P CLASS="MsoNormal"><B><A NAME="Name">Name</A>:</B> Each Illegal Window
+      specification must have a unique name, to distinguish it in the list.
+      Enter a short, descriptive name in this field.<o:p>
+      </o:p>
+      </P>
+      <P CLASS="MsoNormal"><B><A NAME="WindowTitle">Window Title</A>:</B> This
+      field specifies the criteria for ignoring a window based on its title. The
+      drop-down contains a list of the titles of all windows that currently
+      exist on the system, to make it simpler to select a given title and create
+      a criteria from it. You can also enter in any title specification you
+      wish, using wildcard characters. Keep in mind that part or all of a
+      window’s title might change, so try to create criteria for window title
+      that will work across all windows you wish to affect. For example, to
+      ignore all Notepad windows, enter “* - Notepad” for the window title.<o:p>
+      </o:p>
+      </P>
+      <P CLASS="MsoNormal"><B><A NAME="WindowClass">Window Class</A>: </B>Each
+      window on your system is created with a named class. These classes help
+      Windows identify groups of windows that behave the same way. Multiple
+      windows in different applications and with different content very often
+      have the same class. By matching to a window’s class, you can create an
+      Illegal Window criteria that matches the same kinds of windows wherever
+      they are found. This field lets you enter criteria based on a window’s
+      class. The dropdown contains a list of all window classes that currently
+      exist on the system. You can use an entry in this list to build your
+      criteria. You can also determine the class of a window by selecting it in
+      the Hack-It Window List (the class will be displayed in the status bar) or
+      by right clicking the window in the Window List and selecting Window -&gt;
+      Information… The dialog presented will show the window’s class.
+      Example: To ignore all Calculator windows, enter “SciCalc” in the
+      Window Class field. Alternate: With Calculator running, find “SciCalc”
+      in the list of all window classes.<o:p>
+      </o:p>
+      </P>
+      <P CLASS="MsoNormal"><B><A NAME="Filename">Filename</A>:</B> All windows
+      are created by applications running on your system. This field allows you
+      to specify Illegal Window criteria based on the filename of those
+      applications. The dropdown contains a list of the filenames of all
+      applications currently running on the system. You can select the
+      appropriate filename from this list, and possibly make modifications to
+      it. If you know the filename, you can just enter it into this field
+      directly. Ignoring a window based on its application’s filename
+      guarantees that all the windows created by a given application will be
+      ignored, and only the windows created by that application will be ignored.
+      It can be used with the other criteria or alone. Example: To ignore all
+      Hearts windows, enter “*MSHEARTS.EXE” in the Filename field.
+      Alternate: With Hearts running, select the appropriate filename from the
+      Filename dropdown.<o:p>
+      </o:p>
+      </P>
+      <P CLASS="MsoNormal"><B><A NAME="CaseSensitiveMatching">Case Sensitive
+      Matching</A>:</B> Criteria used for matching (Window Title, Window Class,
+      and Filename) are not normally case sensitive, i.e. ‘*Notepad’,
+      ‘*notepad’, and ‘*NOTEPAD’ will all match the same windows.
+      Checking this box enforces case-sensitive matching for all criteria.<o:p>
+      </o:p>
+      </P>
+      <P CLASS="MsoNormal"><B><A NAME="OK">OK</A>:</B> Press OK to accept this
+      Illegal Window specification when you have completed it. It will go into
+      effect immediately. You must name the specification and specify at least
+      one criteria for matching.<o:p>
+      </o:p>
+      </P>
+      <P CLASS="MsoNormal"><B><A NAME="Cancel">Cancel</A>:</B> Press Cancel to
+      cancel adding this specification, or to cancel any changes to a
+      specification you are editing.</TD>
+  </TR>
+  <TR>
+    <TD WIDTH="100%" BGCOLOR="#000080">
+      <P ALIGN="center"><FONT FACE="Arial" COLOR="#FFFFFF"><B>Copyright 2002,
+      Headius Incorporated</B></FONT></TD>
+  </TR>
+</TABLE>
 
 
 
