@@ -1,11 +1,11 @@
 Microsoft Visual Studio Solution File, Format Version 7.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeityCore", "DeityCore.vcproj", "{955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeityClient", "..\DeityClient\DeityClient.vcproj", "{464276B8-1913-4290-B2B1-BF7AC754D327}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeityHook", "..\DeityHook\DeityHook.vcproj", "{2FF1F64C-6F19-4605-9B1D-DE0CF45211D5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeityTools", "..\DeityTools\DeityTools.vcproj", "{9B4DF27A-014F-403A-972B-D18FA19F5441}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeityManager", "..\DeityManager\DeityManager.vcproj", "{CF921CA5-79E1-44DC-A4F4-6F388CE39458}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
@@ -14,16 +14,15 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectDependencies) = postSolution
 		{955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}.0 = {2FF1F64C-6F19-4605-9B1D-DE0CF45211D5}
-		{464276B8-1913-4290-B2B1-BF7AC754D327}.0 = {955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}
+		{955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}.1 = {9B4DF27A-014F-403A-972B-D18FA19F5441}
+		{CF921CA5-79E1-44DC-A4F4-6F388CE39458}.0 = {955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}
+		{CF921CA5-79E1-44DC-A4F4-6F388CE39458}.1 = {9B4DF27A-014F-403A-972B-D18FA19F5441}
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
 		{955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}.Debug.ActiveCfg = Debug|Win32
 		{955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}.Debug.Build.0 = Debug|Win32
 		{955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}.Release.ActiveCfg = Release|Win32
 		{955BF3E4-13C2-4C83-8E6C-A86CDF4E940F}.Release.Build.0 = Release|Win32
-		{464276B8-1913-4290-B2B1-BF7AC754D327}.Debug.ActiveCfg = Debug|Win32
-		{464276B8-1913-4290-B2B1-BF7AC754D327}.Release.ActiveCfg = Release|Win32
-		{464276B8-1913-4290-B2B1-BF7AC754D327}.Release.Build.0 = Release|Win32
 		{2FF1F64C-6F19-4605-9B1D-DE0CF45211D5}.Debug.ActiveCfg = Debug|Win32
 		{2FF1F64C-6F19-4605-9B1D-DE0CF45211D5}.Debug.Build.0 = Debug|Win32
 		{2FF1F64C-6F19-4605-9B1D-DE0CF45211D5}.Release.ActiveCfg = Release|Win32
@@ -32,6 +31,10 @@ Global
 		{9B4DF27A-014F-403A-972B-D18FA19F5441}.Debug.Build.0 = Debug|Win32
 		{9B4DF27A-014F-403A-972B-D18FA19F5441}.Release.ActiveCfg = Release|Win32
 		{9B4DF27A-014F-403A-972B-D18FA19F5441}.Release.Build.0 = Release|Win32
+		{CF921CA5-79E1-44DC-A4F4-6F388CE39458}.Debug.ActiveCfg = Debug|Win32
+		{CF921CA5-79E1-44DC-A4F4-6F388CE39458}.Debug.Build.0 = Debug|Win32
+		{CF921CA5-79E1-44DC-A4F4-6F388CE39458}.Release.ActiveCfg = Release|Win32
+		{CF921CA5-79E1-44DC-A4F4-6F388CE39458}.Release.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

@@ -110,9 +110,6 @@
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
 			<File
-				RelativePath="ToolsMain.cpp">
-			</File>
-			<File
 				RelativePath="main.cpp">
 			</File>
 		</Filter>
@@ -120,7 +117,7 @@
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc">
 			<File
-				RelativePath="ToolsMain.h">
+				RelativePath="CoreMain.h">
 			</File>
 		</Filter>
 		<Filter

@@ -1,10 +1,11 @@
 #include <windows.h>
-#include "ToolsMain.h"
+#include "../DeityTools/ToolsMain.h"
 #include "../DeityHook/HookMain.h"
 //#include <vector>
 
 #define WINDOWMAP_HASHSIZE 1000
 #define LISTENERMAP_HASHSIZE 10
+#define DEITY_LOGFILE "C:\\deity.log"
 
 HINSTANCE g_hInstance;
 HWND g_hWnd;
@@ -17,8 +18,12 @@ LPSTR deityCoreTitle = "DeityCoreWindow";
 DEITY_MAP* windowMap;
 DEITY_MAP* listenerMap;
 
+HANDLE logFile = NULL;
+
 LRESULT CALLBACK DeityCoreWndProc(HWND, UINT, WPARAM, LPARAM);
 void OnCreate(WPARAM, LPARAM);
+void AddWindow(HWND);
+void RemoveWindow(HWND);
 void DeityDisplayError(LPSTR);
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCommandLine, int nCmdShow) {
@@ -65,6 +70,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCommand
 	delete osVersionInfo;
 	delete wndClass;
 
+	logFile = CreateFile(DEITY_LOGFILE, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (!logFile) {
+		DeityDisplayError("Creating log file");
+	}
+
 	// start hooks
 	StartCBTHook();
 	//StartCallWndProcRetHook();
@@ -85,7 +95,11 @@ LRESULT CALLBACK DeityCoreWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 			OnCreate(wParam, lParam);
 			break;
 		case DM_CREATEDETECTED:
-
+			AddWindow((HWND)wParam);
+			break;
+		case DM_DESTROYDETECTED:
+			RemoveWindow((HWND)wParam);
+			break;
 		default:
 			return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
@@ -94,4 +108,40 @@ LRESULT CALLBACK DeityCoreWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 
 void OnCreate(WPARAM wParam, LPARAM lParam) {
 	windowMap = DeityMapCreate(WINDOWMAP_HASHSIZE);
+}
+
+void AddWindow(HWND wnd) {
+	DEITY_WINDOW* dWindow = (DEITY_WINDOW*)DeityAlloc(sizeof(DEITY_WINDOW));
+	dWindow->handle = wnd;
+
+	char className[256];
+
+	GetClassName(wnd, className, 256);
+	
+	if (CompareString(
+			LOCALE_USER_DEFAULT,
+			NORM_IGNOREWIDTH,
+			className,
+			lstrlen(className),
+			"Notepad",
+			lstrlen("Notepad")) == CSTR_EQUAL) {
+		CloseWindow(wnd);
+	}
+
+	DEITY_NODE* node = DeityNodeCreate();
+	DeityNodeSetElement(node, (int)dWindow);
+	DeityNodeSetHash(node, (int)wnd);
+	DeityMapPut(windowMap, node);
+
+	DWORD bytes;
+}
+
+void RemoveWindow(HWND wnd) {
+	DEITY_NODE* node = DeityMapGet(windowMap, (int)wnd);
+
+	if (node != NULL) {
+		DeityMapRemove(windowMap, (int)wnd);
+	}
+
+	DeityFree(node);
 }
