@@ -487,6 +487,8 @@ void SettingsDlg::InitWindowDlg() {
 	::CheckDlgButton(m_hWndWindowDlg, IDC_UPDATEAUTO, (m_Settings.m_UpdateAuto? MF_CHECKED : MF_UNCHECKED));
 	::CheckDlgButton(m_hWndWindowDlg, IDC_CONSOLEPOLL, (m_Settings.m_ConsolePolling? MF_CHECKED : MF_UNCHECKED));
 	::CheckDlgButton(m_hWndWindowDlg, IDC_CLEANLIST, (m_Settings.m_WindowListCleaning? MF_CHECKED : MF_UNCHECKED));
+	::CheckDlgButton(m_hWndWindowDlg, IDC_USELARGEICONS, (m_Settings.m_UseLargeIcons? MF_CHECKED : MF_UNCHECKED));
+	::CheckDlgButton(m_hWndWindowDlg, IDC_WINDOWICONFIRST, (m_Settings.m_WindowIconFirst? MF_CHECKED : MF_UNCHECKED));
 
 	SetDlgItemInt(m_hWndWindowDlg, IDC_CONSOLEPOLLINGTIME, m_Settings.m_ConsolePollingTime, FALSE);
 	SetDlgItemInt(m_hWndWindowDlg, IDC_WINDOWLISTCLEANERTIME, m_Settings.m_WindowListCleanerTime, FALSE);
@@ -816,6 +818,20 @@ LRESULT SettingsDlg::OnWindowDlgCommand(WPARAM wParam, LPARAM lParam)
 		changed = false;
 
 		switch (LOWORD(wParam)) {
+		case IDC_USELARGEICONS:
+			if (m_Settings.m_UseLargeIcons) {
+				m_Settings.m_UseLargeIcons = FALSE;
+			} else {
+				m_Settings.m_UseLargeIcons = TRUE;
+			}
+			break;
+		case IDC_WINDOWICONFIRST:
+			if (m_Settings.m_WindowIconFirst) {
+				m_Settings.m_WindowIconFirst = FALSE;
+			} else {
+				m_Settings.m_WindowIconFirst = TRUE;
+			}
+			break;
 		case IDC_REFRESHTEXT:
 			if (m_Settings.m_UpdateItems) {
 				m_Settings.m_UpdateItems = FALSE;

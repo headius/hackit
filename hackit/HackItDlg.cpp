@@ -508,7 +508,11 @@ LRESULT HackItDlg::OnCreate(WPARAM wParam, LPARAM lParam)
 	::InsertMenu(m_SysMenuTransparencyMenu, 0, MF_BYPOSITION | MF_STRING, IDM_TRANSPARENCY_NONE, "None");
 	
 	// initialize the default icons in the image list and set it into the tree view
-	m_ImageList = ImageList_Create(16, 16, ILC_COLOR32 | ILC_MASK, 128, 16);
+	if (m_Settings.m_UseLargeIcons) {
+		m_ImageList = ImageList_Create(32, 32, ILC_COLOR32 | ILC_MASK, 128, 16);
+	} else {
+		m_ImageList = ImageList_Create(16, 16, ILC_COLOR32 | ILC_MASK, 128, 16);
+	}
 	ImageList_AddIcon(m_ImageList, ::LoadIcon(m_hInstance, MAKEINTRESOURCE(IDI_DESKTOP)));
 	ImageList_AddIcon(m_ImageList, ::LoadIcon(m_hInstance, MAKEINTRESOURCE(IDI_HIDDEN)));
 	ImageList_AddIcon(m_ImageList, ::LoadIcon(m_hInstance, MAKEINTRESOURCE(IDI_DEFAULT)));
@@ -1932,18 +1936,70 @@ HICON HackItDlg::GetWindowIcon(HWND window)
 {
 	HICON hIcon = NULL;
  	
-	hIcon = (HICON)GetClassLong(window, GCL_HICONSM);
- 	
-	if (hIcon <= NULL) {
-		::SendMessageTimeout(window, WM_GETICON, ICON_SMALL, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
-	}
+	if (m_Settings.m_UseLargeIcons) {
+		if (m_Settings.m_WindowIconFirst) {
+			::SendMessageTimeout(window, WM_GETICON, ICON_BIG, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+ 			
+			if (hIcon <= NULL) {
+				hIcon = (HICON)GetClassLong(window, GCL_HICON);
+			}
+		} else {
+			hIcon = (HICON)GetClassLong(window, GCL_HICON);
+ 			
+			if (hIcon <= NULL) {
+				::SendMessageTimeout(window, WM_GETICON, ICON_BIG, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+			}
+		}
 
-	if (hIcon <= NULL) {
-		hIcon = (HICON)GetClassLong(window, GCL_HICON);
-	}
+		if (m_Settings.m_WindowIconFirst) {
+			if (hIcon <= NULL) {
+				::SendMessageTimeout(window, WM_GETICON, ICON_SMALL, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+			}
 
-	if (hIcon <= NULL) {
-		::SendMessageTimeout(window, WM_GETICON, ICON_BIG, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+			if (hIcon <= NULL) {
+				hIcon = (HICON)GetClassLong(window, GCL_HICONSM);
+			}
+		} else {
+			if (hIcon <= NULL) {
+				hIcon = (HICON)GetClassLong(window, GCL_HICONSM);
+			}
+
+			if (hIcon <= NULL) {
+				::SendMessageTimeout(window, WM_GETICON, ICON_SMALL, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+			}
+		}
+	} else {
+		if (m_Settings.m_WindowIconFirst) {
+			::SendMessageTimeout(window, WM_GETICON, ICON_SMALL, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+ 			
+			if (hIcon <= NULL) {
+				hIcon = (HICON)GetClassLong(window, GCL_HICONSM);
+			}
+		} else {
+			hIcon = (HICON)GetClassLong(window, GCL_HICONSM);
+ 			
+			if (hIcon <= NULL) {
+				::SendMessageTimeout(window, WM_GETICON, ICON_SMALL, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+			}
+		}
+
+		if (m_Settings.m_WindowIconFirst) {
+			if (hIcon <= NULL) {
+				::SendMessageTimeout(window, WM_GETICON, ICON_BIG, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+			}
+
+			if (hIcon <= NULL) {
+				hIcon = (HICON)GetClassLong(window, GCL_HICON);
+			}
+		} else {
+			if (hIcon <= NULL) {
+				hIcon = (HICON)GetClassLong(window, GCL_HICON);
+			}
+
+			if (hIcon <= NULL) {
+				::SendMessageTimeout(window, WM_GETICON, ICON_BIG, 0, SMTO_ABORTIFHUNG, 500, (DWORD*)&hIcon);
+			}
+		}
 	}
 
 	if (hIcon < NULL) {
@@ -2139,6 +2195,13 @@ void HackItDlg::Settings()
 			WindowFunctions::SetTransparency(m_hWnd, settings.m_Settings.m_TransparentPercent);
 		} else {
 			WindowFunctions::SetTransparency(m_hWnd, 0);
+		}
+
+		if (settings.m_Settings.m_UseLargeIcons && !m_Settings.m_UseLargeIcons) {
+			ImageList_SetIconSize(m_ImageList, 32, 32);
+
+		} else if (!settings.m_Settings.m_UseLargeIcons && m_Settings.m_UseLargeIcons) {
+			ImageList_SetIconSize(m_ImageList, 16, 16);
 		}
 
 		HFONT font = ::CreateFontIndirect(&(settings.m_Settings.m_LogFont));
