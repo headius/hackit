@@ -41,7 +41,9 @@
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCPostBuildEventTool"
+				Description="Copying DeityHook.dll to DeityCore"
+				CommandLine="copy $(OutDir)\DeityHook.dll ..\DeityCore\Debug"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
@@ -73,7 +75,10 @@
 				Detect64BitPortabilityProblems="TRUE"
 				DebugInformationFormat="3"/>
 			<Tool
-				Name="VCCustomBuildTool"/>
+				Name="VCCustomBuildTool"
+				Description="Copying DeityHook.dll to DeityCore"
+				CommandLine="copy DeityHook.dll ..\DeityCore\Release"
+				Outputs="DeityHook.dll"/>
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)/DeityHook.dll"
@@ -87,7 +92,9 @@
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
-				Name="VCPostBuildEventTool"/>
+				Name="VCPostBuildEventTool"
+				Description="Copying DeityHook.dll to DeityCore"
+				CommandLine="copy $(OutDir)\DeityHook.dll ..\DeityCore\Release"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool

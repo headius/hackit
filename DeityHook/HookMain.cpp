@@ -31,7 +31,7 @@ LRESULT CALLBACK CBTHook(int nCode, WPARAM wParam, LPARAM lParam) {
 	static HWND staticDeityCoreWnd = NULL;
 
 	if (staticDeityCoreWnd == NULL) {
-		staticDeityCoreWnd = FindWindow("DeityCoreWindow", NULL);
+		staticDeityCoreWnd = FindWindow("DeityCoreClass", NULL);
 	}
 
 	if (staticDeityCoreWnd == NULL || !IsWindow(staticDeityCoreWnd)) {
@@ -79,10 +79,10 @@ LRESULT CALLBACK CBTHook(int nCode, WPARAM wParam, LPARAM lParam) {
 		}
 		break;*/
 	case HCBT_CREATEWND:
-		::PostMessage(staticDeityCoreWnd, DM_CREATEDETECTED, (WPARAM)((CBT_CREATEWND*)lParam)->lpcs, wParam);
+		::PostMessage(staticDeityCoreWnd, DM_CREATEDETECTED, wParam, (WPARAM)((CBT_CREATEWND*)lParam)->lpcs);
 		break;
 	case HCBT_DESTROYWND:
-		::PostMessage(staticDeityCoreWnd, DM_DESTROYDETECTED, lParam, wParam);
+		::PostMessage(staticDeityCoreWnd, DM_DESTROYDETECTED, wParam, lParam);
 		break;
 	} 
 	return CallNextHookEx(cbt, nCode, wParam, lParam);
@@ -99,7 +99,7 @@ LRESULT CALLBACK CallWndProcRetHook(int nCode, WPARAM wParam, LPARAM lParam)
 		if (nCode == HC_ACTION) {
 			if (lParam != NULL) {
 				if (staticDeityCoreWnd == NULL) {
-					staticDeityCoreWnd = FindWindow("DeityCoreListManager", NULL);
+					staticDeityCoreWnd = FindWindow("DeityCoreClass", NULL);
 				}
 
 				if (staticDeityCoreWnd == NULL || !IsWindow(staticDeityCoreWnd)) {
@@ -160,7 +160,7 @@ extern "C" void StartCBTHook()
 	static HWND staticDeityCoreWnd = NULL;
 
 	if (staticDeityCoreWnd == NULL) {
-		staticDeityCoreWnd = FindWindow("DeityCoreWindow", NULL);
+		staticDeityCoreWnd = FindWindow("DeityCoreClass", NULL);
 	}
 
 	// enumerate windows for initial population
