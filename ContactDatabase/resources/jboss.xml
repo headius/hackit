@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<jboss>
+  <secure>false</secure>
+  <container-configurations/>
+  <resource-managers/>
+  <enterprise-beans>
+    <entity>
+      <ejb-name>ContactBean</ejb-name>
+      <jndi-name>headius/Contact</jndi-name>
+      <configuration-name></configuration-name>
+    </entity>
+  </enterprise-beans>
+</jboss>
