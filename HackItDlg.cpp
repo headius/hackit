@@ -2090,6 +2090,7 @@ LRESULT HackItDlg::OnNotify(WPARAM wParam, LPARAM lParam)
 
 void HackItDlg::Settings()
 {
+	int WARNING; // need to synchronize settings since many are live
 	int result;
 
 	SettingsDlg settings(m_hWnd, m_hInstance);
