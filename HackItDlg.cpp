@@ -31,6 +31,9 @@ using namespace std;
 HWND g_hWndDlg;
 HWND g_hWndManager;
 
+FARPROC (__stdcall * RegisterShellHook)(HWND, DWORD) = NULL;
+UINT WM_ShellHook = 0;
+
 /////////////////////////////////////////////////////////////////////////////
 // AboutDlg dialog used for App About
 class AboutDlg
@@ -412,12 +415,16 @@ LRESULT HackItDlg::OnCreate(WPARAM wParam, LPARAM lParam)
 
 	m_pHooks = new SystemHooks(m_hWndManager);
 
+	RegisterShellHook = (FARPROC (__stdcall *)(HWND, DWORD))GetProcAddress(GetModuleHandle("SHELL32.DLL"), (LPCSTR)((long)0xB5));
+	WM_ShellHook = RegisterWindowMessage("SHELLHOOK");
+	if (RegisterShellHook)
+	{
+		RegisterShellHook(NULL, RSH_REGISTER);
+		RegisterShellHook(m_hWndManager, RSH_TASKMAN);
+	}
+
 	::SetWindowText(m_StatusBar, "Starting up poll timers...");
 	::RedrawWindow(m_StatusBar, NULL, NULL, RDW_UPDATENOW);
-
-	if (m_Settings.m_ConsolePolling) {
-		SetTimer(m_hWndManager, CONSOLE_WINDOW_POLL_TIMER, m_Settings.m_ConsolePollingTime, NULL);
-	}
 
 	if (m_Settings.m_WindowListCleaning) {
 		SetTimer(m_hWndManager, WINDOW_LIST_CLEANER_TIMER, m_Settings.m_WindowListCleanerTime, NULL);
@@ -1518,18 +1525,7 @@ void HackItDlg::Settings()
 		FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, error, NULL, astring, STRING_BUFFER_SIZE, NULL);
 		MessageBox(NULL, astring, astring, MB_OK);
 	} else  {
-        // apply new settings, make app changes before saving
-		if (settings.m_Settings.m_ConsolePolling) {
-			SetTimer(m_hWndManager, CONSOLE_WINDOW_POLL_TIMER, m_Settings.m_ConsolePollingTime, NULL);
-		} else if (!settings.m_Settings.m_ConsolePolling && m_Settings.m_ConsolePolling) {
-			KillTimer(m_hWndManager, CONSOLE_WINDOW_POLL_TIMER);
-		}
-
-		if (settings.m_Settings.m_ConsolePolling && (settings.m_Settings.m_ConsolePollingTime != m_Settings.m_ConsolePollingTime)) {
-			KillTimer(m_hWndManager, CONSOLE_WINDOW_POLL_TIMER);
-			SetTimer(m_hWndManager, CONSOLE_WINDOW_POLL_TIMER, m_Settings.m_ConsolePollingTime, NULL);
-		}
-
+    // apply new settings, make app changes before saving
 		if (settings.m_Settings.m_WindowListCleaning && !m_Settings.m_WindowListCleaning) {
 			SetTimer(m_hWndManager, WINDOW_LIST_CLEANER_TIMER, m_Settings.m_WindowListCleanerTime, NULL);
 		} else if (!settings.m_Settings.m_WindowListCleaning && m_Settings.m_WindowListCleaning) {

@@ -25,6 +25,7 @@
 #include "ProcessFunctions.h"
 
 extern int (__stdcall *MySetLayeredWindowAttributes)(struct HWND__ *,unsigned long,unsigned char,unsigned long);
+extern UINT WM_ShellHook;
 
 DWORD WINAPI HackItDlg::ListThreadProc(LPVOID data) {
 	WNDCLASSEX wndClass;
@@ -148,6 +149,10 @@ LRESULT CALLBACK HackItDlg::ListThreadWindowProc(HWND hWnd, UINT uMsg, WPARAM wP
 			returnCode = theDlg->OnCheckTrayyedList(wParam, lParam);
 			break;
 		default:
+			if (uMsg == WM_ShellHook) {
+				theDlg->HandleShellHook(wParam, lParam);
+			}
+
 			return DefWindowProc(hWnd, uMsg, wParam, lParam);
 		}
 	}
@@ -159,24 +164,35 @@ LRESULT CALLBACK HackItDlg::ListThreadWindowProc(HWND hWnd, UINT uMsg, WPARAM wP
 	}
 }
 
-BOOL CALLBACK HackItDlg::ConsolePollProc(HWND hwnd, LPARAM lParam) {
-	char winClass[256];
-
-	::GetClassName(hwnd, winClass, 256);
-
-	if (!strcmp(winClass, "ConsoleWindowClass")) {
-		::PostMessage((HWND)lParam, WM_CREATEDETECTED, NULL, (LPARAM)hwnd);
+void HackItDlg::HandleShellHook(WPARAM wParam, LPARAM lParam) {
+	switch (LOWORD(wParam) & 0x00FF)
+	{
+	case HSHELL_WINDOWCREATED:
+		{
+			char className[256];
+			GetClassName((HWND)lParam, className, 256);
+			if (lstrcmp(className, "ConsoleWindowClass") == 0) {
+				PostMessage(m_hWndManager, WM_CREATEDETECTED, 0, lParam);
+			}
+		}
+		break;
+	case HSHELL_WINDOWDESTROYED:
+		break;
+	case HSHELL_REDRAW:
+		{
+			char className[256];
+			GetClassName((HWND)wParam, className, 256);
+			if (lstrcmp(className, "ConsoleWindowClass") == 0) {
+				PostMessage(m_hWndManager, WM_SETTEXTDETECTED, 0, lParam);
+			}
+		}
+		break;
 	}
-
-	return TRUE;
 }
 
 LRESULT HackItDlg::OnTimer(WPARAM wParam, LPARAM lParam)
 {
 	switch (wParam) {
-	case CONSOLE_WINDOW_POLL_TIMER:
-		EnumWindows(ConsolePollProc, (LPARAM)m_hWndManager);
-		break;
 	case WINDOW_LIST_CLEANER_TIMER:
 		this->CleanList();
 		break;
