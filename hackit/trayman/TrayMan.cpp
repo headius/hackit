@@ -205,7 +205,7 @@ BOOL CALLBACK EnumParentWindowsProc(HWND hwnd, LPARAM lParam) {
 	return TRUE;
 }
 
-VOID CALLBACK SendAsyncProc(HWND hwnd, UINT msg, ULONG_PTR dwData, LRESULT lresult) {
+VOID CALLBACK MySendAsyncProc(/*HWND hwnd, UINT msg, ULONG_PTR dwData, LRESULT lresult*/) {
 	// Hack-It has finished processing the initial list populator messages, load the hook
 	
 	if (cbt == NULL) {
@@ -222,7 +222,7 @@ extern "C" void StartCBTHook(HWND wnd)
 
 	// wait for hack-it to process posted message before starting hook
 	//SendMessageCallback(wnd, WM_NULL, 0, 0, SendAsyncProc, 0);
-	SendAsyncProc(NULL, 0, NULL, 0);
+	MySendAsyncProc(/*NULL, 0, NULL, 0*/);
 }
 
 extern "C" void StopCBTHook()
