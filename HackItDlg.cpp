@@ -151,9 +151,9 @@ HackItDlg::HackItDlg(HINSTANCE hInstance)
 		WS_EX_CONTEXTHELP | WS_EX_WINDOWEDGE | (m_Settings.m_AlwaysOnTop ? WS_EX_TOPMOST : 0),
 		"HackIt",
 #ifdef FULLVERSION
-		"Hack-It v4.01 Pro",
+		"Hack-It v4.02 Pro",
 #else
-		"Hack-It v4.01",
+		"Hack-It v4.02",
 #endif
 		WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | m_Settings.m_PlacementShow,
 		m_Settings.m_PlacementLeft,
